@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://Nikhil-creat.github.io/uatlas/sitemap.xml

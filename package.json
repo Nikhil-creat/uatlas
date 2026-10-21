@@ -1,0 +1,2 @@
+{"name":"uatlas","version":"1.0.0","description":"Agentic RAG developer copilot","license":"MIT","author":"Nikhil Chary Sriramoju","engines":{"node":">=18"},
+"scripts":{"dev":"python3 -m http.server 8080","check":"node --check assets/app.js && node --check sw.js && node --check cli/ask-repo.mjs && node --check integrations/slack-bot.mjs","cli":"node cli/ask-repo.mjs"}}

@@ -1,0 +1,18 @@
+services:
+  web:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes: ["./:/usr/share/nginx/html:ro"]
+    ports: ["8080:80"]
+  vision:
+    build: ./docker/vision
+    restart: unless-stopped
+    ports: ["8001:8001"]
+    healthcheck:
+      test: ["CMD","python","-c","import urllib.request as u;u.urlopen('http://localhost:8001/health')"]
+      interval: 30s
+  slack:
+    build: .
+    restart: unless-stopped
+    env_file: [.env]
+    ports: ["3000:3000"]
